@@ -28,6 +28,7 @@ require_once(__DIR__ . '/functions.php');
             </article>
         <?php endforeach ?>
     </div>
+
     <?php require_once(__DIR__ . '/footer.php'); ?>
 </body>
 </html>
