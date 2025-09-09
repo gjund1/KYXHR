@@ -12,6 +12,7 @@ if (
 }
 
 $isFileLoaded = false;
+// Testons si le fichier a bien été envoyé et s'il n'y a pas des erreurs
 if (isset($_FILES['screenshot']) && $_FILES['screenshot']['error'] === 0) {
     // Testons, si le fichier est trop volumineux
     if ($_FILES['screenshot']['size'] > 1000000) {
@@ -19,6 +20,7 @@ if (isset($_FILES['screenshot']) && $_FILES['screenshot']['error'] === 0) {
         return;
     }
 
+    // Testons, si l'extension n'est pas autorisée
     $fileInfo = pathinfo($_FILES['screenshot']['name']);
     $extension = $fileInfo['extension'];
     $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png'];
